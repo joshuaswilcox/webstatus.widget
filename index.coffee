@@ -1,13 +1,14 @@
 #command: 'source $HOME/.bash_profile && ./webstatus.widget/script.sh'
 command: 'source $HOME/.bash_profile && ruby ./webstatus.widget/webstatus.rb'
 
-refreshFrequency: 360000
+refreshFrequency: 36000
 
 style: """
   top: 10px
   right: 50px
   font-family: Helvetica Neue
   text-align:right
+  color: #fff
 
   .circle
     width:50px
