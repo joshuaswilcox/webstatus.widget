@@ -5,10 +5,19 @@ refreshFrequency: 36000
 
 style: """
   top: 10px
-  right: 50px
+  left: 640px
   font-family: Helvetica Neue
   text-align:right
   color: #fff
+
+  .node
+    display: inline-block
+    margin: 0px 10px
+    text-align: center
+    opacity: .5
+
+  .name
+    font-size: 13px
 
   .circle
     width:50px
@@ -19,7 +28,6 @@ style: """
     line-height:50px
     text-align:center
     background:#000
-    opacity: .8
 
   .up
     background: green
@@ -32,11 +40,12 @@ render: -> """
 """
 update: (output, domEl) ->
   container = $(domEl).find('.status')
+  container.html ''
   $.each JSON.parse(output), (idx, obj) ->
     if obj.code == '200'
       status = 'up'
     else
       status = 'down'
 
-    container.append "<div class='node'><div class='circle #{status}'>#{obj.code}</div>#{obj.url}</div>"
+    container.append "<div class='node'><p class='circle #{status}'>#{obj.code}</p><p class='name'>#{obj.short_name}</p></div>"
     return
