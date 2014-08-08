@@ -1,5 +1,5 @@
 #command: 'source $HOME/.bash_profile && ./webstatus.widget/script.sh'
-command: 'source $HOME/.bash_profile && ruby ./webstatus.widget/test.rb'
+command: 'source $HOME/.bash_profile && ruby ./webstatus.widget/webstatus.rb'
 
 refreshFrequency: 360000
 
